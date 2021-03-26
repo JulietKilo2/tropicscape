@@ -1,0 +1,90 @@
+.contents {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.4)
+    ),
+    url(/src/imgs/jungle2.jpg);
+  @include backgroundCover;
+  background-attachment: fixed;
+  h2 {
+    text-align: center;
+  }
+}
+
+.contents-wrapper {
+  width: 90%;
+  margin: 0 auto;
+  padding: 1.5rem 0;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(2.5px);
+  border-radius: 0.5rem;
+  @include flexCenter;
+  flex-direction: column;
+}
+
+.tours {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.tour {
+  padding: 2rem 1rem;
+  width: 100%;
+  p {
+    margin-top: 0.5rem;
+  }
+}
+
+.tour-title {
+  height: 15rem;
+  border-radius: 0.5rem;
+  @include flexCenter;
+  h3 {
+    font-weight: 400;
+  }
+}
+.one {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4) rgba(0, 0, 0, 0.4)),
+    url(/src/imgs/jungletour.jpg);
+  @include backgroundCover;
+}
+.two {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4) rgba(0, 0, 0, 0.4)),
+    url(/src/imgs/junglekayak.jpg);
+  @include backgroundCover;
+}
+.three {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4) rgba(0, 0, 0, 0.4)),
+    url(/src/imgs/sunsetcruise.jpg);
+  @include backgroundCover;
+}
+.four {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4) rgba(0, 0, 0, 0.4)),
+    url(/src/imgs/nightparty.jpg);
+  @include backgroundCover;
+}
+
+// Media Queries
+@media (min-width: 820px) {
+  .contents-wrapper {
+    width: 90%;
+    text-align: center;
+  }
+  .contents h2 {
+    font-size: 2rem;
+  }
+  .tours {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1020px) {
+  .contents-wrapper {
+    width: 80%;
+  }
+  .tours {
+    padding: 2.5rem;
+    width: 100%;
+  }
+}

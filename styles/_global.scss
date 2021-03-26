@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Kalam&family=Merienda&display=swap");
+
+@font-face {
+  font-family: vegan;
+  src: url(/src/vegan-style-font/VeganStylePersonalUse-5Y58.ttf);
+}
+
+@font-face {
+  font-family: tropical-asian;
+  src: url(/src/tropical-asian/TropicalAsianDemoRegular-11V0.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 12px;
+  overflow-x: hidden;
+  font-family: "Merienda", cursive;
+  color: snow;
+}
+
+section {
+  z-index: 0;
+}
+
+h2,
+h3 {
+  font-family: "Merienda", cursive;
+}
+
+a {
+  text-decoration: none;
+  color: snow;
+}
+
+@mixin defaultWallpaper {
+  background-image: url(/src/imgs/leaves3.jpg);
+}
+
+@mixin placeholder {
+  width: 10rem;
+  height: 5rem;
+}
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin backgroundCover {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}

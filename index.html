@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="/styles/style.css">
+    <title>Tropicscape</title>
+</head>
+
+<body>
+    <section class="intro">
+        <video autoplay muted loop id="intro-video">
+            <source src="./src/vids/vid2.mp4" type="video/mp4">
+        </video>
+        <nav>
+            <div id="nav-logo">Tropicscape</div>
+            <ul>
+                <li><a href=#>Home</a></li>
+                <li><a href=#>About</a></li>
+                <li><a href=#>Tours</a></li>
+                <li><a href=#>Contact</a></li>
+            </ul>
+        </nav>
+        <div class="intro-text">
+            <h1>Tropicscape</h1>
+            <h2>your adventure begins</h2>
+            <h3>Scroll for more</h3>
+        </div>
+    </section>
+    <section class="about">
+        <div class="about-wrapper">
+            <div class="testimonials">
+                <h2>Why Tropicscape?</h2>
+                <p>Our customers had perfect experiences with us,<br /> See their testimonies!</p>
+            </div>
+            <div class="card-container">
+                <div class="card active" style="background-image: url(./src/imgs/gallery1.jpg)">
+                    <p>I saw the most beautiful sunset in my life! <br /> - Jenny</p>
+                </div>
+                <div class="card" style="background-image: url(./src/imgs/gallery2.jpg)">
+                    <p>Lorem ipsum dolor sit amet consectetur.</p>
+                </div>
+                <div class="card" style="background-image: url(./src/imgs/gallery3.jpg)">
+                    <p>Lorem ipsum dolor sit amet consectetur.</p>
+                </div>
+                <div class="card" style="background-image: url(./src/imgs/gallery4.jpg)">
+                    <p>Lorem ipsum dolor sit amet consectetur.</p>
+                </div>
+                <div class="card" style="background-image: url(./src/imgs/gallery5.jpg)">
+                    <p>Lorem ipsum dolor sit amet consectetur.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contents">
+        <div class="contents-wrapper">
+            <h2>Exotic Tropical Tours</h2>
+            <div class="tours">
+                <div class="tour">
+                    <div class="tour-title one">
+                        <h3>Jungle Rat</h3>
+                    </div>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid, officiis?</p>
+                </div>
+                <div class="tour">
+                    <div class="tour-title two">
+                        <h3>Mangrove Pirate</h3>
+                    </div>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing.</p>
+                </div>
+                <div class="tour">
+                    <div class="tour-title three">
+                        <h3>Sunset Romance</h3>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus itaque voluptatum ut!</p>
+                </div>
+                <div class="tour">
+                    <div class="tour-title four">
+                        <h3>Night Party</h3>
+                    </div>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contact">
+        <div class="contact-wrapper">
+            <h2>Adventure starts here!</h2>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" name="email" required>
+                <label for="email">Telephone:</label>
+                <input type="telephone" name="telephone" required>
+                <label for="options">Options:</label>
+                <select name="options" id="options" required>
+                    <option value="jungle">Jungle Rat</option>
+                    <option value="mangrove">Mangrove Pirates</option>
+                    <option value="sunset">Sunset cruise</option>
+                    <option value="party">Night party</option>
+                </select>
+                <button type="submit">Sign up now!</button>
+            </form>
+        </div>
+    </section>
+    <footer>
+        <h3>Our social media</h3>
+        <div class="icons">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+    </footer>
+    <script src="./app.js"></script>
+</body>
+
+</html>

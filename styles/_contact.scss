@@ -1,0 +1,107 @@
+.contact {
+  height: 85vh;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.35)
+    ),
+    url(/src/imgs/jungle2.jpg);
+  background-attachment: fixed;
+  @include backgroundCover;
+  @include flexCenter;
+}
+
+.contact-wrapper {
+  width: 90%;
+  height: 90%;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(1.5px);
+  border-radius: 0.5rem;
+  @include flexCenter;
+  flex-direction: column;
+  padding: 1rem;
+  h2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  form {
+    margin-top: 1rem;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.05rem;
+    label {
+      margin: 0.25rem 0;
+    }
+    input,
+    select {
+      margin: 0.25rem 0;
+      font-size: 1.35rem;
+      color: snow;
+      background-color: transparent;
+      border: 0.5px solid snow;
+      border-radius: 5px;
+    }
+    option {
+      background-color: rgba(1, 80, 69, 0.9);
+    }
+    button {
+      margin-top: 1rem;
+      font-family: "Kalam", sans-serif;
+      color: snow;
+      font-weight: 500;
+      background-color: transparent;
+      border: 0.5px solid snow;
+      border-radius: 5px;
+      padding: 0.5rem 1.2rem;
+      width: 10rem;
+      align-self: center;
+    }
+  }
+}
+
+footer {
+  padding: 0.8rem;
+  height: 15vh;
+  background-color: rgba(1, 80, 69, 0.9);
+  @include flexCenter;
+  flex-direction: column;
+  h3 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  .icons {
+    margin-top: 0.8rem;
+    width: 80%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  i {
+    font-size: 2rem;
+  }
+}
+
+// Media Queries
+
+@media (min-width: 600px) {
+  .contact-wrapper {
+    width: 55%;
+  }
+  footer {
+    .icons {
+      width: 30%;
+    }
+  }
+}
+
+@media (min-width: 980px) {
+  .contact-wrapper {
+    width: 40%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .contact-wrapper {
+    width: 30%;
+  }
+}
