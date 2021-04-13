@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Kalam&family=Merienda&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
 
 @font-face {
   font-family: vegan;
@@ -14,6 +15,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -30,11 +32,17 @@ section {
 h2,
 h3 {
   font-family: "Merienda", cursive;
+  text-transform: uppercase;
 }
 
 a {
   text-decoration: none;
   color: snow;
+}
+
+p {
+  font-family: "Nunito", sans-serif;
+  font-size: 1rem;
 }
 
 @mixin defaultWallpaper {

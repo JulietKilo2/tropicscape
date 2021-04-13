@@ -1,8 +1,8 @@
 .contents {
   background-image: linear-gradient(
       to bottom,
-      rgba(0, 0, 0, 0.4),
-      rgba(0, 0, 0, 0.4)
+      rgba(0, 0, 0, 0.65),
+      rgba(0, 0, 0, 0.65)
     ),
     url(/src/imgs/jungle2.jpg);
   @include backgroundCover;
@@ -10,6 +10,11 @@
   h2 {
     text-align: center;
   }
+  text-align: center;
+}
+.contents-vacuum {
+  visibility: hidden;
+  min-height: 15vh;
 }
 
 .contents-wrapper {
@@ -34,6 +39,14 @@
   p {
     margin-top: 0.5rem;
   }
+  span {
+    font-size: 0.95rem;
+    cursor: pointer;
+    border-bottom: 1px solid transparent;
+  }
+  span:hover {
+    border-color: snow;
+  }
 }
 
 .tour-title {
@@ -44,6 +57,30 @@
     font-weight: 400;
   }
 }
+
+.tour-info {
+  display: none;
+  margin-top: 1rem;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  border: 0.5px solid snow;
+  border-radius: 0.5rem;
+  padding: 0.85rem;
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 0.5rem;
+  }
+  p {
+    margin: 0;
+    padding: 0;
+  }
+}
+.tour-active {
+  display: flex;
+}
+
 .one {
   background-image: linear-gradient(rgba(0, 0, 0, 0.4) rgba(0, 0, 0, 0.4)),
     url(/src/imgs/jungletour.jpg);
@@ -86,5 +123,11 @@
   .tours {
     padding: 2.5rem;
     width: 100%;
+  }
+}
+
+@media (min-width: 1300px) {
+  .tours {
+    grid-template-columns: repeat(4, 1fr);
   }
 }

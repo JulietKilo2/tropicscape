@@ -13,18 +13,25 @@
 </head>
 
 <body>
-    <section class="intro">
+    <section class="intro" id="intro">
         <video autoplay muted loop id="intro-video">
             <source src="./src/vids/vid2.mp4" type="video/mp4">
         </video>
-        <nav>
-            <div id="nav-logo">Tropicscape</div>
-            <ul>
-                <li><a href=#>Home</a></li>
-                <li><a href=#>About</a></li>
-                <li><a href=#>Tours</a></li>
-                <li><a href=#>Contact</a></li>
-            </ul>
+        <nav class="nav">
+            <div class="nav-bar">
+                <a href="index.html">
+                    <div class="nav-logo">Tropicscape</div>
+                </a>
+                <div class="menu-bars-container">
+                    <i id="menu-bars" class="fas fa-bars"></i>
+                </div>
+            </div>
+            <div class="menu">
+                <a class="menu-link" href="#intro">Home</a>
+                <a class="menu-link" href="#about">About</a>
+                <a class="menu-link" href="#contents">Tours</a>
+                <a class="menu-link" href="#contact">Contact</a>
+            </div>
         </nav>
         <div class="intro-text">
             <h1>Tropicscape</h1>
@@ -32,32 +39,30 @@
             <h3>Scroll for more</h3>
         </div>
     </section>
-    <section class="about">
-        <div class="about-wrapper">
-            <div class="testimonials">
+    <section class="about" id="about">
+        <div class="about-vacuum">1</div>
+        <div class="about-items-wrapper">
+            <div class="about-title">
                 <h2>Why Tropicscape?</h2>
-                <p>Our customers had perfect experiences with us,<br /> See their testimonies!</p>
+                <p>Our customers had perfect experiences with us.<br /> See their testimonies!</p>
             </div>
-            <div class="card-container">
-                <div class="card active" style="background-image: url(./src/imgs/gallery1.jpg)">
-                    <p>I saw the most beautiful sunset in my life! <br /> - Jenny</p>
-                </div>
-                <div class="card" style="background-image: url(./src/imgs/gallery2.jpg)">
-                    <p>Lorem ipsum dolor sit amet consectetur.</p>
-                </div>
-                <div class="card" style="background-image: url(./src/imgs/gallery3.jpg)">
-                    <p>Lorem ipsum dolor sit amet consectetur.</p>
-                </div>
-                <div class="card" style="background-image: url(./src/imgs/gallery4.jpg)">
-                    <p>Lorem ipsum dolor sit amet consectetur.</p>
-                </div>
-                <div class="card" style="background-image: url(./src/imgs/gallery5.jpg)">
-                    <p>Lorem ipsum dolor sit amet consectetur.</p>
+            <div class="about-reviews">
+                <div class="about-review-item">
+                    <div class="item-image-container">
+                        <i id="reviews-left-btn" class="fas fa-chevron-left"></i>
+                        <img class="item-image" src="./src/imgs/pfp1.jpg" alt="profile picture">
+                        <i id="reviews-right-btn" class="fas fa-chevron-right"></i>
+                    </div>
+                    <p class="item-name">Jeremiah</p>
+                    <div class="item-line"></div>
+                    <p class="item-text">
+                    </p>
                 </div>
             </div>
         </div>
     </section>
-    <section class="contents">
+    <section class="contents" id="contents">
+        <div class="contents-vacuum">1</div>
         <div class="contents-wrapper">
             <h2>Exotic Tropical Tours</h2>
             <div class="tours">
@@ -65,30 +70,81 @@
                     <div class="tour-title one">
                         <h3>Jungle Rat</h3>
                     </div>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid, officiis?</p>
+                    <p>In the jungle, the mighty jungle, where you will have a walk today?</p><span class="more-info"
+                        data-id="one">See more</span>
+                    <div class="tour-info" data-id="one">
+                        <p>What's included?</p>
+                        <ul>
+                            <li>&#10003; Shuttle rides</li>
+                            <li>&#10003; Lunch</li>
+                            <li>&#10003; Snacks and plenty of water</li>
+                            <li>&#10003; Dedicated tour guide</li>
+                            <li>&#10003; A rare opportunity to witness jungle wild life</li>
+                        </ul>
+                        <p>Price: $75</p>
+                        <p>Hours: 09:00 - 14:00</p>
+                    </div>
                 </div>
                 <div class="tour">
                     <div class="tour-title two">
                         <h3>Mangrove Pirate</h3>
                     </div>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing.</p>
+                    <p>Are you adventurous? How about kayaking through mangrove trees?</p><span class="more-info"
+                        data-id="two">See
+                        more</span>
+                    <div class="tour-info" data-id="two">
+                        <p>What's included?</p>
+                        <ul>
+                            <li>&#10003; Shuttle rides</li>
+                            <li>&#10003; Instructors for kayaking beginners</li>
+                            <li>&#10003; Lunch after kayaking</li>
+                            <li>&#10003; Fishing boat rides</li>
+                        </ul>
+                        <p>Price: $100</p>
+                        <p>Hours: 10:00 - 16:00</p>
+                    </div>
                 </div>
                 <div class="tour">
                     <div class="tour-title three">
-                        <h3>Sunset Romance</h3>
+                        <h3>Sunset Cruise</h3>
                     </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus itaque voluptatum ut!</p>
+                    <p>A romantic evening with the loved one will be remembered forever.</p><span class="more-info"
+                        data-id="three">See
+                        more</span>
+                    <div class="tour-info" data-id="three">
+                        <p>What's included?</p>
+                        <ul>
+                            <li>&#10003; Shuttle rides</li>
+                            <li>&#10003; Dinner and all-you-can drink cocktail bar</li>
+                            <li>&#10003; A must-see Sunset</li>
+                            <li>&#10003; Your partner will be grateful</li>
+                        </ul>
+                        <p>Price: $200</p>
+                        <p>Hours: 16:00 - 20:00</p>
+                    </div>
                 </div>
                 <div class="tour">
                     <div class="tour-title four">
                         <h3>Night Party</h3>
                     </div>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                    <p>How about some party? Cocktails, finger foods, musics, and dance, you name it!</p><span
+                        class="more-info" data-id="four">See more</span>
+                    <div class="tour-info" data-id="four">
+                        <p>What's included?</p>
+                        <ul>
+                            <li>&#10003; Dinner</li>
+                            <li>&#10003; Awesome musicians and local bands</li>
+                            <li>&#10003; Open swimming pool</li>
+                            <li>&#10003; Unforgettable night at Tropicscape!</li>
+                        </ul>
+                        <p>Price: $160</p>
+                        <p>Hours: 19:00 - 23:00</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="contact">
+    <section class="contact" id="contact">
         <div class="contact-wrapper">
             <h2>Adventure starts here!</h2>
             <form>
@@ -105,7 +161,7 @@
                     <option value="sunset">Sunset cruise</option>
                     <option value="party">Night party</option>
                 </select>
-                <button type="submit">Sign up now!</button>
+                <button type="submit">Check availability!</button>
             </form>
         </div>
     </section>

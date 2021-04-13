@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Kalam&family=Merienda&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
 @font-face {
   font-family: vegan;
   src: url(/src/vegan-style-font/VeganStylePersonalUse-5Y58.ttf);
@@ -14,6 +15,7 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -30,6 +32,7 @@ section {
 h2,
 h3 {
   font-family: "Merienda", cursive;
+  text-transform: uppercase;
 }
 
 a {
@@ -37,15 +40,25 @@ a {
   color: snow;
 }
 
+p {
+  font-family: "Nunito", sans-serif;
+  font-size: 1rem;
+}
+
 .intro {
   font-family: "Merienda", cursive;
   height: 100vh;
   color: snow;
   background-attachment: fixed;
-  background-color: rgba(0, 0, 0, 0.4);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.45)), to(rgba(0, 0, 0, 0.45))), url("/src/imgs/gallery2.jpg");
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url("/src/imgs/gallery2.jpg");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 #intro-video {
+  display: none;
   position: fixed;
   z-index: -1;
   top: 50%;
@@ -56,55 +69,100 @@ a {
      object-fit: cover;
 }
 
-nav {
-  display: none;
-  top: 0;
-  height: 10vh;
-  width: 100%;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 139, 139, 0.2)), to(rgba(0, 139, 139, 0.1)));
-  background: linear-gradient(to bottom, rgba(0, 139, 139, 0.2), rgba(0, 139, 139, 0.1));
-}
-
-nav ul {
-  -webkit-box-flex: 2;
-      -ms-flex: 2;
-          flex: 2;
-  height: 100%;
-  list-style-type: none;
-  padding: 0;
+.nav {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-item-align: baseline;
-      align-self: baseline;
+  width: 100%;
+  z-index: 2;
 }
 
-nav li {
+.nav .nav-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  padding: 1rem 0;
+  z-index: 1;
+}
+
+.nav .menu {
+  margin-top: 0;
+  padding: 0;
+  width: 100%;
+  width: 100%;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  list-style-type: none;
+  padding: 0;
+  z-index: 1;
+}
+
+.nav .menu a {
+  padding: 0.25rem 0 0 1rem;
   font-family: "Kalam", cursive;
-  font-size: 1.15rem;
+  font-size: 1.45rem;
   font-weight: 400;
+  width: 100%;
+  z-index: 1;
 }
 
-#nav-logo {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+.nav .menu a:hover {
+  cursor: pointer;
+  background-color: teal;
+}
+
+.nav i {
+  font-size: 1.5rem;
+  padding: 0 1.25rem;
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+.nav .nav-logo {
+  display: none;
   font-family: vegan;
   font-size: 1.25rem;
-  text-align: center;
-  -ms-flex-item-align: baseline;
-      align-self: baseline;
+  padding: 0 1.25rem;
+  margin-left: 0.5rem;
+}
+
+.nav .menu-active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .intro-text {
   position: relative;
-  top: 30%;
+  top: 35%;
   z-index: 1;
   text-align: center;
 }
@@ -128,27 +186,46 @@ nav li {
   margin-top: 3rem;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
-  cursor: pointer;
 }
 
-@media (min-width: 860px) {
-  nav {
+@media (min-width: 800px) {
+  #intro-video {
+    display: block;
+  }
+  .intro {
+    background-image: none;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.55)), to(rgba(0, 0, 0, 0.45)));
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.45));
+  }
+  .nav {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .nav #nav-logo {
+    margin-left: 5rem;
+  }
+  .nav .menu {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-right: 5rem;
   }
-}
-
-@media (max-width: 860px) {
-  #intro-video {
+  .nav .menu a {
+    padding: 0;
+  }
+  .nav .menu-bars-container {
     display: none;
-  }
-  .intro {
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.35)), to(rgba(0, 0, 0, 0.25))), url("/src/imgs/intro-snap-min.png");
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.25)), url("/src/imgs/intro-snap-min.png");
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
   }
 }
 
@@ -156,8 +233,8 @@ nav li {
 /* ****************************************/
 .about {
   color: snow;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.45)), to(rgba(0, 0, 0, 0.35))), url(/src/imgs/jungle2.jpg);
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.35)), url(/src/imgs/jungle2.jpg);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.65)), to(rgba(0, 0, 0, 0.65))), url(/src/imgs/jungle2.jpg);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(/src/imgs/jungle2.jpg);
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
@@ -177,13 +254,18 @@ nav li {
   font-family: "Kalam", cursive;
 }
 
-.about-wrapper {
+.about-vacuum {
+  visibility: hidden;
+  min-height: 20vh;
+}
+
+.about-items-wrapper {
   padding: 1rem;
   margin: 5rem auto;
   border-radius: 0.5rem;
   width: 90vw;
   height: 90%;
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 255, 255, 0.25);
   -webkit-backdrop-filter: blur(1.5px);
           backdrop-filter: blur(1.5px);
   display: -webkit-box;
@@ -199,22 +281,31 @@ nav li {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  align-items: center;
 }
 
-.testimonials {
+.about-items-wrapper .about-title {
   width: 100%;
   text-align: center;
-  line-height: 1.75;
+  line-height: 1.5;
 }
 
-.testimonials p {
-  margin-top: 0.5rem;
+.about-items-wrapper .about-title h2,
+.about-items-wrapper .about-title p {
+  font-size: 1.25rem;
+  padding: 0.5rem;
 }
 
-.card-container {
-  margin-top: 1rem;
+.about-items-wrapper .about-title p {
   width: 100%;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.about-items-wrapper .about-review-item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -222,85 +313,94 @@ nav li {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 2px;
-  -webkit-transition: 0.5s ease-in-out;
-  transition: 0.5s ease-in-out;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.card {
-  -webkit-transition: 0.5s ease-in-out;
-  transition: 0.5s ease-in-out;
-  border-radius: 0.5rem;
+.about-items-wrapper .item-image-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   width: 100%;
-  max-width: 100%;
-  height: 8vh;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.about-items-wrapper .item-image-container i {
+  font-size: 2.5rem;
+  opacity: 0.55;
   cursor: pointer;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 
-.card p {
-  opacity: 0;
-  -webkit-transition: 0.5s ease-in-out;
-  transition: 0.5s ease-in-out;
-  position: relative;
-  top: 70%;
-  left: 2%;
-}
-
-.card .p-active {
-  top: 85%;
-}
-
-.active {
-  height: 30vh;
-}
-
-.active p {
+.about-items-wrapper .item-image-container i:hover {
   opacity: 1;
 }
 
-@media (min-width: 780px) {
-  .card-container {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    padding: 2rem;
-  }
-  .card {
-    height: 30vh;
-    -webkit-box-flex: 0.25;
-        -ms-flex: 0.25;
-            flex: 0.25;
-  }
-  .active {
-    height: 30vh;
-    -webkit-box-flex: 5;
-        -ms-flex: 5;
-            flex: 5;
-  }
+.about-items-wrapper .item-image-container img {
+  border-radius: 50%;
+  width: 125px;
+  height: 125px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 
-@media (min-width: 1280px) {
-  .about-wrapper,
-  .card-container {
-    width: 80%;
+.about-items-wrapper .about-reviews {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.about-items-wrapper .item-name {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
+
+.about-items-wrapper .item-text {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+@media screen and (min-width: 600px) {
+  .about-items-wrapper {
+    width: 50vw;
+  }
+  .about-review-item {
+    width: 50vw;
   }
 }
 
 .contents {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4))), url(/src/imgs/jungle2.jpg);
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(/src/imgs/jungle2.jpg);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.65)), to(rgba(0, 0, 0, 0.65))), url(/src/imgs/jungle2.jpg);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(/src/imgs/jungle2.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  text-align: center;
 }
 
 .contents h2 {
   text-align: center;
+}
+
+.contents-vacuum {
+  visibility: hidden;
+  min-height: 15vh;
 }
 
 .contents-wrapper {
@@ -342,6 +442,16 @@ nav li {
   margin-top: 0.5rem;
 }
 
+.tour span {
+  font-size: 0.95rem;
+  cursor: pointer;
+  border-bottom: 1px solid transparent;
+}
+
+.tour span:hover {
+  border-color: snow;
+}
+
 .tour-title {
   height: 15rem;
   border-radius: 0.5rem;
@@ -358,6 +468,39 @@ nav li {
 
 .tour-title h3 {
   font-weight: 400;
+}
+
+.tour-info {
+  display: none;
+  margin-top: 1rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: left;
+  border: 0.5px solid snow;
+  border-radius: 0.5rem;
+  padding: 0.85rem;
+}
+
+.tour-info ul {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 0.5rem;
+}
+
+.tour-info p {
+  margin: 0;
+  padding: 0;
+}
+
+.tour-active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .one {
@@ -416,10 +559,17 @@ nav li {
   }
 }
 
+@media (min-width: 1300px) {
+  .tours {
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+  }
+}
+
 .contact {
-  height: 85vh;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.35))), url(/src/imgs/jungle2.jpg);
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.35)), url(/src/imgs/jungle2.jpg);
+  height: 70vh;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.65)), to(rgba(0, 0, 0, 0.65))), url(/src/imgs/jungle2.jpg);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(/src/imgs/jungle2.jpg);
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
@@ -510,7 +660,7 @@ nav li {
 }
 
 footer {
-  padding: 0.8rem;
+  padding: 1rem;
   height: 15vh;
   background-color: rgba(1, 80, 69, 0.9);
   display: -webkit-box;
