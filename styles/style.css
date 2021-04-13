@@ -54,7 +54,7 @@ p {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url("../src/imgs/gallery2.jpg");
   background-position: center;
   background-size: cover;
-  background-attachment: fixed;
+  background-attachment: scroll;
 }
 
 #intro-video {
@@ -71,7 +71,7 @@ p {
 
 .nav {
   position: fixed;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.75);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -151,7 +151,7 @@ p {
   font-family: vegan;
   font-size: 1.25rem;
   padding: 0 1.25rem;
-  margin-left: 0.5rem;
+  margin-left: 1.5rem;
 }
 
 .nav .menu-active {
@@ -190,12 +190,7 @@ p {
 
 @media (min-width: 800px) {
   #intro-video {
-    display: block;
-  }
-  .intro {
-    background-image: none;
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.55)), to(rgba(0, 0, 0, 0.45)));
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.45));
+    display: none;
   }
   .nav {
     -webkit-box-orient: horizontal;
